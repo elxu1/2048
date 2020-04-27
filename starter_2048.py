@@ -190,27 +190,25 @@ def place_random(board):
     Places a 2 (60%) or 4 (37%) or 8 (3%) randomly on the board in an empty space
     Arg board: board - the board you wish to place the piece on
     """
-    
-    #Delete this return statement AND comment before beginning Step 2 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    return;
 
     #Check if the board is full and return False if it is
-    ">>>>>>>>>>YOUR CODE HERE 10<<<<<<<<<<"
+    if board_full(board):
+        return False
 
     #random.random() generates a random decimal between [0, 1) ... Multiplying by 100 generates a number between [0, 100)
     generated = random.random() * 100;
 
     #Assign to_place according to my generated random number
 
-    if generated < -1:                              #YOUR CODE HERE (replace -1) <<<<<
+    if generated < 60:                              #YOUR CODE HERE (replace -1) <<<<<
         to_place = "2"
 
-    elif generated < -1 and generated >= -1:        #YOUR CODE HERE (replace -1) <<<<<
+    elif generated < 97 and generated >= 60:        #YOUR CODE HERE (replace -1) <<<<<
         to_place = "4"
 
     else:
         #What should to_place be if it's not a 2 or 4?
-        to_place = ">>>>>>>>>>YOUR CODE HERE 11<<<<<<<<<<"
+        to_place = "8"
 
 
     #Variable keeps track of whether a randomly generated empty spot has been found yet
@@ -220,8 +218,8 @@ def place_random(board):
     while not found:
         #Generate a random (x,y) coordinate that we can try to put our new value in at
         #How did we "generate" a random number earlier? (hint: x and y should be between [0, N) )
-        random_y = ">>>>>>>>>>YOUR CODE HERE 12<<<<<<<<<<"
-        random_x = ">>>>>>>>>>YOUR CODE HERE 13<<<<<<<<<<"
+        random_y = random.random()*N
+        random_x = random.random()*N
 
         #Think about why this is necessary ( hint: changes 3.4 (float) -> 3 (int) )
         random_y = int(random_y)
@@ -231,7 +229,7 @@ def place_random(board):
         found = get_piece(random_x, random_y, board) == '*'
 
     #Place the piece at the randomly generated (x,y) coordinate
-    ">>>>>>>>>>YOUR CODE HERE 14<<<<<<<<<<"
+    place_piece(to_place, random_x, random_y, board)
 
     return True
 
