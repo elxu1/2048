@@ -89,23 +89,23 @@ def main():
             quit()
 
         #Up arrow
-        elif 65:
+        elif key == 65:
             swipe_up(board)
 
         #Down arrow
-        elif 66:
+        elif key == 66:
             swipe_down(board)
 
         #Right arrow
-        elif 67:
+        elif key == 67:
             swipe_right(board)
 
         #Left arrow
-        elif 68:
+        elif key == 68:
             swipe_left(board)
 
         #Space bar
-        elif 32:
+        elif key == 32:
             swap(board);
 
         #Check to see if I've lost at the end of the game or not
