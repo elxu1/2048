@@ -245,17 +245,13 @@ def have_lost(board):
     Arg board: board - the board you wish to check for a losing state
     """
 
-    #Delete this return statement AND comment before beginning Step 3 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    return False
-
-
     N = len(board)
 
     #Check every (x,y) position on the board to see if a move is possible
     for y in range(N):
         for x in range(N):
-            ">>>>>>>>>>YOUR CODE HERE 15<<<<<<<<<< (1 or 2 lines)"
-
+            if move_possible(x, y, board):
+                return False
     return True
 
 #End of Step 3 #############################################################################################
@@ -270,16 +266,18 @@ def end_move(board):
     """
     
     #Print the board
-    ">>>>>>>>>>YOUR CODE HERE 16<<<<<<<<<< (2 lines)"
+    clear()
+    print_board(board)
 
     #Pause for .2 seconds
-    ">>>>>>>>>>YOUR CODE HERE 17<<<<<<<<<<"
+    pause(0.2)
 
     #Place a random piece on the board at a random (x,y) position
-    ">>>>>>>>>>YOUR CODE HERE 18<<<<<<<<<<"
+    place_random(board)
 
     #Print the board again
-    ">>>>>>>>>>YOUR CODE HERE 19<<<<<<<<<< (2 lines)"
+    clear()
+    print_board(board)
 
 #End of Step 4 #############################################################################################
 
