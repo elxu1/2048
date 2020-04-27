@@ -133,13 +133,18 @@ def get_piece(x, y, board):
     """
     
     #Ensure that x and y are both integers (use assert)
-    ">>>>>>>>>>YOUR CODE HERE 5<<<<<<<<<<"
+    assert type(x) == int, "X is not an integer"
+    assert type(y) == int, "Y is not an integer"
+
 
     #What does this do?
     N = len(board)
 
     #Checking that the (x,y) coordinates given are valid for the N x N board
-    ">>>>>>>>>>YOUR CODE HERE 6<<<<<<<<<<"
+    valid_x = (x >= 0 and x < N)
+    valid_y = (y >= 0 and y < N)
+    if not valid_x or not valid_y:
+        return None
 
     #Getting the piece on the board
     return board[y][x]
@@ -157,13 +162,17 @@ def place_piece(piece, x, y, board):
     """
     
     #Ensure that x and y are both integers (use assert)
-    ">>>>>>>>>>YOUR CODE HERE 7<<<<<<<<<<"
+    assert type(x) == int, "X is not an integer"
+    assert type(y) == int, "Y is not an integer"
 
     #What are the dimensions of the board?
-    ">>>>>>>>>>YOUR CODE HERE 8<<<<<<<<<<"
+    N = len(board)
 
     #Checking that the (x,y) coordinates given are valid for the board
-    ">>>>>>>>>>YOUR CODE HERE 9<<<<<<<<<<"
+    valid_x = (x >= 0 and x < N)
+    valid_y = (y >= 0 and y < N)
+    if not valid_x or not valid_y:
+        return False
 
     #Placing the piece on the board
     board[y][x] = piece
