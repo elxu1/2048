@@ -291,32 +291,32 @@ def swipe_left(board):
     Arg board: board - (WHAT IS A BOARD ARGUMENT?)
     """
     
-    #YOUR COMMENT HERE
+    # Keeps track if the move succeeds
     action_taken = False
 
-    #YOUR COMMENT HERE
+    # The size of the board
     N = len(board)
 
-    #YOUR COMMENT HERE
+    # Iterate through each cell
     for y in range(N):
         for x in range(N):
-            #YOUR COMMENT HERE
+            # Get the value at the cell and the value on the left
             piece_at_xy = get_piece(x, y, board)
             left_adjacent = get_piece(x-1, y, board)
 
-            #YOUR COMMENT HERE
+            # If the cell's value is nothing, move on to the next cell
             if piece_at_xy == '*':
                 continue
 
-            #YOUR COMMENT HERE
+            # If there is no cell to the left (off the grid)
             if left_adjacent == None:
                 continue
 
-            #YOUR COMMENT HERE
+            # Determine if an action was taken
             action_taken = move(x, y, "left", board) or action_taken
 
 
-    #YOUR COMMENT HERE
+    # If something happened
     if action_taken:
         end_move(board)
 
