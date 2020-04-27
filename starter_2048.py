@@ -90,26 +90,26 @@ def main():
 
         #Up arrow
         elif 65:
-            "YOUR CODE HERE (1 line) <<<<<"
+            swipe_up(board)
 
         #Down arrow
         elif 66:
-            "YOUR CODE HERE (1 line) <<<<<"
+            swipe_down(board)
 
         #Right arrow
         elif 67:
-            "YOUR CODE HERE (1 line) <<<<<"
+            swipe_right(board)
 
         #Left arrow
         elif 68:
-            "YOUR CODE HERE (1 line) <<<<<"
+            swipe_left(board)
 
         #Space bar
         elif 32:
             swap(board);
 
         #Check to see if I've lost at the end of the game or not
-        if ">>>>>>>>>>YOUR CODE HERE 4<<<<<<<<<<":
+        if have_lost(board):
             
             print("You lost! Would you like to play again? (y/n)");
             if (input() == 'y'):
